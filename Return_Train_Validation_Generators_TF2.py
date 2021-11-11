@@ -625,21 +625,13 @@ def return_generators(batch_size=16, wanted_keys={'inputs':['image','mask'],'out
     base_path, morfeus_drive = return_paths()
     if not os.path.exists(base_path):
         print('{} does not exist'.format(base_path))
-    if train_path is None:
-        train_path = [os.path.join(base_path, path_lead, 'Train{}_Records'.format(add))]
-    if validation_path is None:
-        validation_path = [os.path.join(base_path, path_lead, 'Validation_Records{}'.format(validation_name))]
-    ext = 'Validation'
-    if evaluation:
-        ext += '_whole'
-    if is_test:
-        validation_path = [os.path.join(base_path, path_lead, 'Test_Records{}'.format(validation_name))]
 
     train_generator = DataGeneratorClass(record_paths=train_path, debug=False)
     validation_generator = DataGeneratorClass(record_paths=validation_path, in_parallel=True)
     train_processors, validation_processors = [], []
     base_processors = [
         Expand_Dimensions(axis=-1, on_images=True, on_annotations=False),
+        new_random_things
                         ]
     train_processors += base_processors
     validation_processors += base_processors
