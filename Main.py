@@ -25,6 +25,7 @@ if plot_lr:
     _, morfeus_drive, _, _ = return_generators(path_extension=path_extension)
     path = os.path.join(morfeus_drive,path_desc)
     make_plots(path)
+'''
 Now, we need to run the model for a number of epochs ~200, so we can get a nice curve to make final model
 decision based on
 '''
