@@ -12,7 +12,7 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu)
 
 path_extension = 'Single_Images3D_None'
-cube_size = (16, 16, 50, 50)
+cube_size = (15, 16, 50, 50)
 path_desc='3.25_Learning_Rates_Cube_Training'
 model_name = '3D_Fully_Atrous_Variable_Cube_Training_8_32_100_100'
 '''
