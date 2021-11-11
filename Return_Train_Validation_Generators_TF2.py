@@ -632,6 +632,7 @@ def return_generators(batch_size=16, wanted_keys={'inputs':['image','mask'],'out
     base_processors = [
         Expand_Dimensions(axis=-1, on_images=True, on_annotations=False),
         new_random_things2
+        ddd
                         ]
     train_processors += base_processors
     validation_processors += base_processors
